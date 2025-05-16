@@ -131,28 +131,28 @@ class Blockchain:
 
 def main():
     # Tworzymy nowy blockchain z trudnością 2 (wymaga 2 zer na początku hash)
-    blockchain = Blockchain(difficulty=2)
+    blockchain = Blockchain(difficulty=3)
 
     # Transakcja 1: Alice wysyła 50 jednostek Bobowi
     blockchain.add_transaction("Alice", "Bob", 50)
-    blockchain.add_block()  # Dodajemy blok, aby transakcja została zapisana
+    blockchain.add_block()
 
     # Transakcja 2: Bob wysyła 30 jednostek Charliemu i 10 jednostek Johny'emu
     blockchain.add_transaction("Bob", "Charlie", 30)
     blockchain.add_transaction("Bob", "Johny", 10)
-    blockchain.add_block()  # Dodajemy blok, aby te transakcje zostały zapisane
+    blockchain.add_block()
 
     # Transakcja 3: Charlie wysyła 50 jednostek Alice
     blockchain.add_transaction("Charlie", "Alice", 50)
-    blockchain.add_block()  # Dodaj trzeci blok z tą transakcją
+    blockchain.add_block()
 
     # Wyświetlanie calego blockchaina
     print("\nBlockchain po dodaniu transakcji:")
     blockchain.display_chain()
 
     # Sprawdzanie, czy blockchain jest poprawny
-    print("\nSprawdzamy, czy blockchain jest poprawny...")
-    print(f"Is blockchain valid? {blockchain.is_chain_valid()}")
+    print("\nSprawdzamy, czy blockchain jest poprawny")
+    print(f"Is blockchain valid?: {blockchain.is_chain_valid()}")
 
     # Sprawdzanie sald użytkowników
     print("\nSaldo użytkowników:")
